@@ -2,7 +2,7 @@
 
 ## 1. 개요
 - Bug Type: global-buffer-overflow
-- CWE: CWE-122
+- CWE: CWE-787
 - Category: basic
 
 ## 2. 코드 설명

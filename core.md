@@ -70,3 +70,9 @@ C. global
 - 배치 형태: { object, right_redzone } 형태가 공식 테스트에서 확인됨
 - 특징: adaptive global redzone, 1:1 고정 아님
 - 탐지 방식: shadow poison + access 전 검사
+
+
+## slow path check (partial addressable....)
+- 0 (addressable) 이 아니라고 해서 바로 오류를 띄우는 것이 아님
+- 1, 2, 4, 8바이트 등 실제 허용된 범위를 넘는가? 판단
+- ex. (addr & 7) -> (offset + 3) -> partial shadow 와 비교
