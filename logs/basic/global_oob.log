@@ -1,0 +1,42 @@
+=================================================================
+==53231==ERROR: AddressSanitizer: global-buffer-overflow on address 0x63198c80cb50 at pc 0x63198c7d17dd bp 0x7ffd00018460 sp 0x7ffd00018458
+WRITE of size 4 at 0x63198c80cb50 thread T0
+    #0 0x63198c7d17dc in main /home/user/asan_study/src/basic/global_oob.c:17:22
+    #1 0x7be20682a1c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #2 0x7be20682a28a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #3 0x63198c6f8344 in _start (/home/user/asan_study/bin/basic/global_oob+0x2c344) (BuildId: acd6a870d03c419606aecef74fb968478d08a7db)
+
+0x63198c80cb50 is located 0 bytes after global variable 'global_buffer' defined in '/home/user/asan_study/src/basic/global_oob.c:8' (0x63198c80cb40) of size 16
+SUMMARY: AddressSanitizer: global-buffer-overflow /home/user/asan_study/src/basic/global_oob.c:17:22 in main
+Shadow bytes around the buggy address:
+  0x63198c80c880: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x63198c80c900: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x63198c80c980: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x63198c80ca00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x63198c80ca80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x63198c80cb00: 00 00 00 00 00 00 00 00 00 00[f9]f9 f9 f9 f9 f9
+  0x63198c80cb80: f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9
+  0x63198c80cc00: f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9
+  0x63198c80cc80: f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 00 00 00 00
+  0x63198c80cd00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x63198c80cd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==53231==ABORTING

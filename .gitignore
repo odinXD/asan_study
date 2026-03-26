@@ -1,4 +1,9 @@
-bin/
-logs/
-ir/
-asm/
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+*.swp
+
+# temp
+*.tmp
+*.bak
