@@ -1,9 +1,4 @@
-# OS / editor
+bin/
+.vscode/
 .DS_Store
 Thumbs.db
-.vscode/
-*.swp
-
-# temp
-*.tmp
-*.bak

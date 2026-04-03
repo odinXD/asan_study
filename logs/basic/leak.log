@@ -1,0 +1,13 @@
+
+=================================================================
+==4314==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 64 byte(s) in 1 object(s) allocated from:
+    #0 0x586debe22193 in malloc (/home/user/asan_study/bin/basic/leak+0xc6193) (BuildId: 6e6cabb5e1468eb97d7180218268cc940a5d6ec6)
+    #1 0x586debe60761 in make_leak /home/user/asan_study/src/basic/leak.c:10:15
+    #2 0x586debe60743 in main /home/user/asan_study/src/basic/leak.c:16:5
+    #3 0x7883c8a2a1c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #4 0x7883c8a2a28a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #5 0x586debd87344 in _start (/home/user/asan_study/bin/basic/leak+0x2b344) (BuildId: 6e6cabb5e1468eb97d7180218268cc940a5d6ec6)
+
+SUMMARY: AddressSanitizer: 64 byte(s) leaked in 1 allocation(s).
